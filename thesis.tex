@@ -3,7 +3,7 @@
 %%% TeX-master: t
 %%% End:
 
-\documentclass[master,openright,utf,arialtoc]{tongjithesis}
+\documentclass[master,xetex,arialtitle]{tongjithesis}
 % \documentclass[%
 %   master|doctor, % mandatory option
 %   xetex|pdftex|dvips|dvipdfm, % optional
@@ -34,39 +34,39 @@
 
 \tableofcontents
 
-%\input{data/denotation}
+\input{data/denotation}
 
-%\listoffigures
+\listoffigures
 
-%\listoftables
+\listoftables
 
-%\listofequations
+\listofequations
 
 %%% 正文
 \mainmatter
+\chapter{the first}
+\section{sucesss}
+It is not chapter command fault. Comment on line279 to line294, and you can get
+pdf file. Use xelatex to compile.
 
-\chapter{无法识别文字}
-\section{可以用么}
-我终于成功了，哈哈
 
-%%% 其他部分
 \backmatter
 
 \makeatother
 
 % 参考文献
-%\bibliographystyle{tongjibib}
-%\bibliography{ref/refs}
+\bibliographystyle{tongjibib}
+\bibliography{ref/refs}
 
 % 致谢
-%\include{data/ack}
+\include{data/ack}
 
 % 附录
-%\begin{appendix}
-%\input{data/appendix01}
-%\end{appendix}
+\begin{appendix}
+\input{data/appendix01}
+\end{appendix}
 
 % 个人简历
-%\include{data/resume}
+\include{data/resume}
 
 \end{document}
