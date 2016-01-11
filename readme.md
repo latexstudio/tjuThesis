@@ -1,5 +1,5 @@
-Originally from [url]https://github.com/zhouyuan/tongjithesis[/url]
+Originally from https://github.com/zhouyuan/tongjithesis
 
 ###Changes
 1. All files encoded in UTF8
-2. Use xepdftex to compile files
+2. Use xelaftex to compile files
