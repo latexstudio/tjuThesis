@@ -5,3 +5,6 @@
 *.toc
 *.thm
 *.out
+*.lof
+*.loe
+*.lot
