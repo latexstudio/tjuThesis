@@ -145,6 +145,9 @@
 \fi
 \urlstyle{same}
 \RequirePackage{hypernat}
+\RequirePackage{caption}
+\RequirePackage{titletoc}
+
 \renewcommand\frontmatter{%
   \if@openright\cleardoublepage\else\clearpage\fi
   \@mainmatterfalse
