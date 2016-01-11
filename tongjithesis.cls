@@ -277,7 +277,22 @@
   \let\description\compactdesc
   \let\enddescription\endcompactdesc}
 %where error is
-
+% \newcommand*\MakePerPage[2][\@ne]{%
+  % \expandafter\def\csname c@pchk@#2\endcsname{\c@pchk@{#2}{#1}}%
+  % \newcounter{pcabs@#2}%
+  % \@addtoreset{pchk@#2}{#2}}
+% \def\new@pagectr#1{\@newl@bel{pchk@#1}}
+% \def\c@pchk@#1#2{\z@=\z@
+  % \begingroup
+  % \expandafter\let\expandafter\next\csname pchk@#1@\arabic{pcabs@#1}\endcsname
+  % \addtocounter{pcabs@#1}\@ne
+  % \expandafter\ifx\csname pchk@#1@\arabic{pcabs@#1}\endcsname\next
+  % \else \setcounter{#1}{#2}\fi
+  % \protected@edef\next{%
+    % \string\new@pagectr{#1}{\arabic{pcabs@#1}}{\noexpand\thepage}}%
+  % \protected@write\@auxout{}{\next}%
+  % \endgroup\global\z@}
+% \MakePerPage{footnote}
 %enderror
 \def\tongji@textcircled#1{%
   \ifnum \value{#1} <10 \textcircled{\xiaoliu\arabic{#1}}
