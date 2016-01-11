@@ -78,7 +78,7 @@
 \RequirePackage{amsmath,amssymb}
 \RequirePackage{txfonts}
 \RequirePackage{graphicx}
-\RequirePackage[config]{subfig}
+\RequirePackage{subfig}
 \RequirePackage{indentfirst}
 \RequirePackage[neverdecrease]{paralist}
 \iftongji@xetex
@@ -146,7 +146,11 @@
 \urlstyle{same}
 \RequirePackage{hypernat}
 \RequirePackage{caption}
-\RequirePackage{titletoc}
+\RequirePackage{topsection}
+%\RequirePackage{titletoc}
+%\RequirePackage{titlesec}
+%\RequirePackage{parskip}
+%\RequirePackage{tocvsec2}
 
 \renewcommand\frontmatter{%
   \if@openright\cleardoublepage\else\clearpage\fi
@@ -237,16 +241,18 @@
   \let\@evenhead\@empty%
   \def\@oddfoot{\hfil\wuhao\thepage\hfil}%
   \let\@evenfoot=\@oddfoot}
+% tongji@headings
 \def\ps@tongji@headings{%
   \def\@oddhead{\vbox to\headheight{%
       \hb@xt@\textwidth{\hfill\wuhao\song\leftmark\hfill}%
-      \vskip2pt\hbox{\vrule width\textwidth height0.4pt depth0pt}}}
+      \vskip 2pt\hbox{\vrule width\textwidth height 0.4pt depth 0pt}}}
   \def\@evenhead{\vbox to\headheight{%
       \hb@xt@\textwidth{\wuhao\song%
       \hfill\leftmark\hfill}%
-      \vskip2pt\hbox{\vrule width\textwidth height0.4pt depth0pt}}}
+      \vskip 2pt\hbox{\vrule width\textwidth height 0.4pt depth 0pt}}}
   \def\@oddfoot{\hfil\wuhao\thepage\hfil}
   \let\@evenfoot=\@oddfoot}
+% chaptermark
 \renewcommand{\chaptermark}[1]{\@mkboth{\@chapapp\  ~~#1}{}}
 \newlength\CJK@twochars
 \ifxetex
@@ -270,22 +276,9 @@
   \let\endenumerate\endcompactenum
   \let\description\compactdesc
   \let\enddescription\endcompactdesc}
-\newcommand*\MakePerPage[2][\@ne]{%
-  \expandafter\def\csname c@pchk@#2\endcsname{\c@pchk@{#2}{#1}}%
-  \newcounter{pcabs@#2}%
-  \@addtoreset{pchk@#2}{#2}}
-\def\new@pagectr#1{\@newl@bel{pchk@#1}}
-\def\c@pchk@#1#2{\z@=\z@
-  \begingroup
-  \expandafter\let\expandafter\next\csname pchk@#1@\arabic{pcabs@#1}\endcsname
-  \addtocounter{pcabs@#1}\@ne
-  \expandafter\ifx\csname pchk@#1@\arabic{pcabs@#1}\endcsname\next
-  \else \setcounter{#1}{#2}\fi
-  \protected@edef\next{%
-    \string\new@pagectr{#1}{\arabic{pcabs@#1}}{\noexpand\thepage}}%
-  \protected@write\@auxout{}{\next}%
-  \endgroup\global\z@}
-\MakePerPage{footnote}
+%where error is
+
+%enderror
 \def\tongji@textcircled#1{%
   \ifnum \value{#1} <10 \textcircled{\xiaoliu\arabic{#1}}
   \else\ifnum \value{#1} <100 \textcircled{\qihao\arabic{#1}}\fi
